@@ -16,15 +16,14 @@ jobs:
           command: |
             # echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
             docker login -u "$DOCKER_ID" -p "$DOCKER_PASSWORD"
-            docker build -t stephengrider/multi-client ./client
-            docker build -t stephengrider/multi-nginx ./nginx
-            docker build -t stephengrider/multi-server ./server
-            docker build -t stephengrider/multi-worker ./worker
-            docker ps -all
-            docker push stephengrider/multi-client
-            docker push stephengrider/multi-nginx
-            docker push stephengrider/multi-server
-            docker push stephengrider/multi-worker
+            docker build -t abhijeetjha1995/multi-client ./client
+            docker build -t abhijeetjha1995/multi-nginx ./nginx
+            docker build -t abhijeetjha1995/multi-server ./server
+            docker build -t abhijeetjha1995/multi-worker ./worker
+            docker push abhijeetjha1995/multi-client
+            docker push abhijeetjha1995/multi-nginx
+            docker push abhijeetjha1995/multi-server
+            docker push abhijeetjha1995/multi-worker
 
 workflows:
   version: 2.1
