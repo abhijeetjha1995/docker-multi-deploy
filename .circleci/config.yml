@@ -6,11 +6,8 @@ orbs:
 
 jobs:
   deploy:
-    docker:
-      - image: cimg/node:16.10
-        auth:
-          username: $DOCKER_ID
-          password: $DOCKER_PASSWORD
+    machine:
+      enabled: true
     steps:
       - checkout
       - run:
