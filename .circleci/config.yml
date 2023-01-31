@@ -7,12 +7,12 @@ orbs:
 jobs:
   unit-test:
     docker:
-      - image: cimg/node:16.10
+      - image: circleci/docker@1.4.0
     steps:
       - checkout
       - run:
           name: Run Unit tests
-          command: docker run -e CI=true stephengrider/react-test npm test 
+          command: docker run -e CI=true abhijeetjha1995/react-test npm test 
   deploy:
     machine:
       enabled: true
