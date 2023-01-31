@@ -20,7 +20,7 @@ jobs:
             docker build -t stephengrider/multi-worker ./worker
             # echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
             docker login -u "$DOCKER_ID" -p "$DOCKER_PASSWORD"
-            docker push stephengrider/multi-client@latest
+            docker push stephengrider/multi-client
             docker push stephengrider/multi-nginx
             docker push stephengrider/multi-server
             docker push stephengrider/multi-worker
