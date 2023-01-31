@@ -3,6 +3,7 @@ version: 2.1
 orbs:
   aws-elastic-beanstalk: circleci/aws-elastic-beanstalk@2.0.1
   node: circleci/node@4.7
+  docker: circleci/docker@1.4.0
 
 jobs:
   deploy:
@@ -18,7 +19,7 @@ jobs:
             docker build -t stephengrider/multi-server ./server
             docker build -t stephengrider/multi-worker ./worker
             # echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-            docker login -u "$DOCKER_ID" -p "$DOCKER_PASSWORD" docker.io
+            docker login -u "$DOCKER_ID" -p "$DOCKER_PASSWORD"
             docker push stephengrider/multi-client
             docker push stephengrider/multi-nginx
             docker push stephengrider/multi-server
