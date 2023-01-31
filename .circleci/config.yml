@@ -13,10 +13,7 @@ jobs:
       - run:
           name: Installing deployment dependencies
           command: |
-            - docker build -t stephengrider/multi-client ./client
-            - docker build -t stephengrider/multi-nginx ./nginx
-            - docker build -t stephengrider/multi-server ./server
-            - docker build -t stephengrider/multi-worker ./worker
+            - docker build -t stephengrider/multi-client
 
 workflows:
   version: 2.1
