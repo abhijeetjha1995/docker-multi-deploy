@@ -24,7 +24,6 @@ jobs:
           name: Installing deployment dependencies
           command: |
             echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-            # docker login -u "$DOCKER_ID" -p "$DOCKER_PASSWORD"
             docker build -t abhijeetjha1995/multi-client ./client
             docker build -t abhijeetjha1995/multi-nginx ./nginx
             docker build -t abhijeetjha1995/multi-server ./server
