@@ -20,6 +20,7 @@ jobs:
             docker build -t stephengrider/multi-nginx ./nginx
             docker build -t stephengrider/multi-server ./server
             docker build -t stephengrider/multi-worker ./worker
+            docker ps -all
             docker push stephengrider/multi-client
             docker push stephengrider/multi-nginx
             docker push stephengrider/multi-server
