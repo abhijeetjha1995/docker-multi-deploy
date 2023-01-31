@@ -17,11 +17,6 @@ jobs:
             - docker build -t stephengrider/multi-nginx ./nginx
             - docker build -t stephengrider/multi-server ./server
             - docker build -t stephengrider/multi-worker ./worker
-            - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-            - docker push stephengrider/multi-client
-            - docker push stephengrider/multi-nginx
-            - docker push stephengrider/multi-server
-            - docker push stephengrider/multi-worker
 
 workflows:
   version: 2.1
