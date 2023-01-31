@@ -12,7 +12,9 @@ jobs:
       - checkout
       - run:
           name: Run Unit tests
-          command: docker run -e CI=true abhijeetjha1995/react-test npm test 
+          command: |
+            docker build -t abhijeetjha1995/react-test -f ./client/Dockerfile.dev ./client
+            docker run -e CI=true abhijeetjha1995/react-test npm test 
   deploy:
     machine:
       enabled: true
