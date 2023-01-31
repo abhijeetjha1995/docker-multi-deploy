@@ -6,8 +6,8 @@ orbs:
 
 jobs:
   unit-test:
-    docker:
-      - image: circleci/docker@1.4.0
+    machine:
+      enabled: true
     steps:
       - checkout
       - run:
