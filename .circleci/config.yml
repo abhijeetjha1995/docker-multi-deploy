@@ -5,6 +5,14 @@ orbs:
   node: circleci/node@4.7
 
 jobs:
+  unit-test:
+    docker:
+      - image: cimg/node:16.10
+    steps:
+      - checkout
+      - run:
+          name: Run Unit tests
+          command: docker run -e CI=true stephengrider/react-test npm test 
   deploy:
     machine:
       enabled: true
@@ -28,4 +36,7 @@ workflows:
   version: 2.1
   build_deploy:
     jobs:
-      - deploy
+      - unit-test
+      - deploy:
+          requires:
+            - unit-test
