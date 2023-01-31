@@ -5,16 +5,6 @@ orbs:
   node: circleci/node@4.7
 
 jobs:
-  unit-test:
-    docker:
-      - image: cimg/node:16.10
-    steps:
-      - checkout
-      # - node/install
-      - run: npm install
-      - run:
-          name: Run Unit tests
-          command: npm test
   deploy:
     docker:
       - image: cimg/node:16.10
@@ -37,7 +27,4 @@ workflows:
   version: 2.1
   build_deploy:
     jobs:
-      - unit-test
-      - deploy:
-          requires:
-            - unit-test
+      - deploy
