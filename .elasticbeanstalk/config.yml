@@ -1,9 +1,9 @@
 branch-defaults:
   main:
-    environment: "Multidockerapp-env"
+    environment: "Multidockerdeploy-env"
 global:
-  application_name: "multi-docker-app"
-  default_ec2_keyname: "Multidockerapp-env"
+  application_name: "multi-docker-deploy"
+  default_ec2_keyname: "Multidockerdeploy-env"
   default_platform: 64bit Amazon Linux 2/3.5.3
   default_region: ap-south-1
   sc: git
