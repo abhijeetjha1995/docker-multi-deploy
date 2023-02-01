@@ -21,7 +21,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Installing deployment dependencies
+          name: Login Docker Hub and Upload image to Hub
           command: |
             echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
             docker build -t abhijeetjha1995/multi-client ./client
@@ -33,7 +33,7 @@ jobs:
             docker push abhijeetjha1995/multi-server
             docker push abhijeetjha1995/multi-worker
       - run:
-          name: Installing deployment dependencies
+          name: Installing EBS cli 
           command: |
             sudo apt-get -y -qq update
             sudo apt-get install python3-pip python3-dev build-essential
