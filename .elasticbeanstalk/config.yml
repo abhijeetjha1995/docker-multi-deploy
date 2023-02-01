@@ -1,9 +1,9 @@
 branch-defaults:
   main:
-    environment: "Democici-env"
+    environment: "Multidockerapp-env"
 global:
-  application_name: "demo_ci_ci"
-  default_ec2_keyname: "Democici-env"
+  application_name: "multi-docker-app"
+  default_ec2_keyname: "Multidockerapp-env"
   default_platform: 64bit Amazon Linux 2/3.5.3
   default_region: ap-south-1
   sc: git

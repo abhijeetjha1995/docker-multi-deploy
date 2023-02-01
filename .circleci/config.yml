@@ -32,6 +32,16 @@ jobs:
             docker push abhijeetjha1995/multi-nginx
             docker push abhijeetjha1995/multi-server
             docker push abhijeetjha1995/multi-worker
+      - run:
+          name: Installing deployment dependencies
+          command: |
+            sudo apt-get -y -qq update
+            sudo apt-get install python3-pip python3-dev build-essential
+            sudo pip3 install awsebcli botocore==1.19.63 --upgrade
+      - run:
+          name: Deploy to Elastic Beanstalk
+          command: |
+            eb deploy Multidockerapp-env
 
 workflows:
   version: 2.1
